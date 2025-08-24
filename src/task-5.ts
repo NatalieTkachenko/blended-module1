@@ -14,11 +14,13 @@
 
 // Типізуйте функцію повністю: параметри і повернення функції.
 
-function createUser({ name, age }: { name: string; age: number }): {
+type User = {
   name: string;
   age: number;
-  isAdmin: boolean;
-} {
+  isAdmin?: boolean;
+};
+
+function createUser({ name, age }: User): User {
   return {
     name,
     age,

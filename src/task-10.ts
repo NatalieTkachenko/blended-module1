@@ -17,11 +17,16 @@
 // 4. Переконайтеся, що результат функції має правильну типізацію, а TypeScript не видає помилок.
 
 // Приклад виклику:
+type Users = string[];
+type User = {
+  id: number;
+  name: string;
+};
 
-const users = ['alice', 'bob', 'charlie'];
+const users: Users = ['alice', 'bob', 'charlie'];
 
-function toUserObjects(users: string[]): Array<{ name: string; id: number }> {
-  const userObject: { name: string; id: number }[] = [];
+function toUserObjects(users: Users): Array<User> {
+  const userObject: User[] = [];
   for (let i = 0; i <= users.length - 1; i++) {
     userObject.push({
       name: users[i],
